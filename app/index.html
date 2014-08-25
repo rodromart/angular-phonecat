@@ -2,35 +2,27 @@
 <html lang="en" ng-app="phonecatApp" ng-controller="PhoneListCtrl">
 <head>
   <meta charset="utf-8">
-  <title ng-bind-template="Google Phone Gallery: {{query}}">Google Phone Gallery</title>
-  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+  <title ng-bind-template="Google Phone Gallery">Google Phone Gallery</title>
+
   <link rel="stylesheet" href="css/app.css">
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+
+
   <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-route/angular-route.js"></script>
+  <script src="js/app.js"></script>
   <script src="js/controllers.js"></script>
+  <script src="js/filters.js"></script>
+
 </head>
 <body>
+  <!-- Filter test
+  <input ng-model="userInput"> Uppercased: {{ userInput | uppercase }}
 
-  <div class="containes-fluid">
-    <div class="row">
-        <div class="col-md-2">       
-            <!--Sidebar content-->
-        Search: <input ng-model="query">
-        Order by:
-        <select ng-model="orderProp">
-            <option value="age">Newest</option>
-            <option value="name">Alphabetical </option>
-        </select>
-      </div>
-        <div class="col-md-10">        
-            <!--Body content-->
-            <ul class="phones">
-                <li ng-repeat="phone in phones | filter:query | orderBy:orderProp">
-                    <span>{{phone.name}}</span>
-                    <p>{{phone.snippet}}</p>
-                </li>
-            </ul>
-            
-            </div>
-    </div>
+  {{ "lower cap string" | uppercase }}
+  {{ {foo: "bar", baz: 23} | json }}
+  {{ 1304375948024 | date }}
+  {{ 1304375948024 | date:"MM/dd/yyyy @ h:mma" }} -->
+  <div ng-view></div>
 </body>
 </html>

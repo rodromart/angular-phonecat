@@ -4,4 +4,16 @@
 
 describe('filter', function() {
 
+  beforeEach(module('phonecatFilters'));
+
+  describe('checkmarks', function(){
+
+    it('should convert boolean values to unicode checkmarks or cross',
+    inject(function(checkmarkFilter){
+      expect(checkmarkFilter(true)).toBe('\u2713');
+      expect(checkmarkFilter(false)).toBe('\u2718');
+
+    }));
+  });
+
 });
